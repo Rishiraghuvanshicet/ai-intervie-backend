@@ -53,9 +53,9 @@ const userRegister = async (req, res) => {
 
 const userLogin = async (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
 
-    const user = await userModel.findOne({ username });
+    const user = await userModel.findOne({ email });
 
     if (!user) {
       return res.status(404).json({
